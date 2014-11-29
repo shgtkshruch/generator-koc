@@ -1,0 +1,25 @@
+{
+  "name": "generator-koc",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shgtkshruch/generator-koc.git"
+  },
+  "author": "shgtkshruch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shgtkshruch/generator-koc/issues"
+  },
+  "homepage": "https://github.com/shgtkshruch/generator-koc",
+  "dependencies": {
+    "yeoman-generator": "^0.18.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.0.1"
+  }
+}
