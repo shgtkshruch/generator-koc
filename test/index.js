@@ -24,7 +24,7 @@ describe('generator koc', function () {
         'package.json',
         'nodemon.json',
         'views/index.jade',
-        'public/style/main.css',
+        'public/style/main.styl',
         'public/script/index.js'
       ]);
 
