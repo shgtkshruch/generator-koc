@@ -21,6 +21,7 @@ describe('generator koc', function () {
     this.koc.run({}, function() {
       assert.file([
         'index.js',
+        '.gitignore',
         'package.json',
         'nodemon.json',
         'views/index.jade',
