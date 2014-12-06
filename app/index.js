@@ -11,8 +11,12 @@ module.exports = generators.Base.extend({
     this.copy('package.json', 'package.json');
     this.copy('nodemon.json', 'nodemon.json');
     this.copy('jshintrc', '.jshintrc');
+    this.copy('gulpfile.js', 'gulpfile.js');
     this.directory('views');
-    this.directory('public');
+    this.directory('src');
+    this.mkdir('public');
+    this.mkdir('model');
+    this.mkdir('lib');
   },
 
   install: function () {

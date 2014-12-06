@@ -2,7 +2,7 @@
   "watch": [
     "index.js",
     "views/",
-    "public/",
+    "src/",
     "lib/"
   ]
 }

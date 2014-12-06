@@ -21,12 +21,14 @@ describe('generator koc', function () {
     this.koc.run({}, function() {
       assert.file([
         'index.js',
+        '.jshintrc',
         '.gitignore',
+        'gulpfile.js',
         'package.json',
         'nodemon.json',
         'views/index.jade',
-        'public/style/main.styl',
-        'public/script/index.js'
+        'src/style/main.scss',
+        'src/script/index.js'
       ]);
 
       assert.fileContent([
