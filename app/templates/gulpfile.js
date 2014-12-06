@@ -9,6 +9,22 @@ gulp.task('style', function () {
     .pipe(gulp.dest('./public/style'));
 });
 
-gulp.task('default', function () {
+gulp.task('nodemon', function () {
+  nodemon({
+    script: 'index.js',
+    execMap: {
+      js: "node --harmony"
+    },
+    watch: [
+      "index.js",
+      "views/",
+      "public/",
+      "model/",
+      "lib/"
+    ]
+  });
+});
+
+gulp.task('default', ['nodemon'], function () {
   gulp.start('style');
 });

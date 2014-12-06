@@ -10,7 +10,7 @@ describe('generator koc', function () {
   };
 
   before(function(done) {
-    helpers.testDirectory(path.join(__dirname, 'tmp'), function () {
+    helpers.testDirectory(path.join(__dirname, 'tmp-test'), function () {
       this.koc = helpers.createGenerator('koc', ['../../app']);
       this.koc.options = options;
       done();
@@ -21,19 +21,20 @@ describe('generator koc', function () {
     this.koc.run({}, function() {
       assert.file([
         'index.js',
+        'README.md',
         '.jshintrc',
         '.gitignore',
         'gulpfile.js',
         'package.json',
-        'nodemon.json',
         'views/index.jade',
         'src/style/main.scss',
         'src/script/index.js'
       ]);
 
       assert.fileContent([
-        ['package.json', /"name": "tmp"/],
-        ['views/index.jade', /title tmp/]
+        ['README.md', /# tmp-test/],
+        ['package.json', /"name": "tmp-test"/],
+        ['views/index.jade', /title tmp-test/]
       ]);
 
       done();

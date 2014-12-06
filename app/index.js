@@ -6,10 +6,10 @@ module.exports = generators.Base.extend({
   },
 
   app: function () {
+    this.copy('README.md', 'README.md');
     this.copy('index.js', 'index.js');
     this.copy('gitignore', '.gitignore');
     this.copy('package.json', 'package.json');
-    this.copy('nodemon.json', 'nodemon.json');
     this.copy('jshintrc', '.jshintrc');
     this.copy('gulpfile.js', 'gulpfile.js');
     this.directory('views');

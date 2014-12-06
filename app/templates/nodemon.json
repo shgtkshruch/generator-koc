@@ -1,9 +1,0 @@
-{
-  "watch": [
-    "index.js",
-    "views/",
-    "src/",
-    "lib/"
-  ]
-}
-
