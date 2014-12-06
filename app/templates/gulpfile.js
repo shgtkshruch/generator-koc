@@ -1,12 +1,11 @@
 var gulp = require('gulp');
-var $ = require('gulp-load-plugin')();
+var $ = require('gulp-load-plugins')();
 
 gulp.task('style', function () {
-  $.watch('./src/style/**/*.scss')
+  gulp.src('public/style/main.scss')
     .pipe($.plumber())
-    .pipe(gulp.src('./src/style/main.scss'))
     .pipe($.sass())
-    .pipe(gulp.dest('./public/style'));
+    .pipe(gulp.dest('public/style'));
 });
 
 gulp.task('nodemon', function () {
@@ -26,5 +25,7 @@ gulp.task('nodemon', function () {
 });
 
 gulp.task('default', ['nodemon'], function () {
-  gulp.start('style');
+  $.watch('public/style/**/*.scss', function () {
+    gulp.start('style');
+  });
 });
