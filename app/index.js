@@ -13,6 +13,7 @@ module.exports = generators.Base.extend({
     this.copy('jshintrc', '.jshintrc');
     this.copy('gulpfile.js', 'gulpfile.js');
     this.directory('views');
+    this.directory('model');
     this.directory('src');
     this.mkdir('public');
     this.mkdir('model');

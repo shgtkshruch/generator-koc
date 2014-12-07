@@ -28,13 +28,15 @@ describe('generator koc', function () {
         'package.json',
         'views/index.jade',
         'src/style/main.scss',
-        'src/script/index.js'
+        'src/script/index.js',
+        'model/model.js'
       ]);
 
       assert.fileContent([
         ['README.md', /# tmp-test/],
         ['package.json', /"name": "tmp-test"/],
-        ['views/index.jade', /title tmp-test/]
+        ['views/index.jade', /title tmp-test/],
+        ['model/model.js', /var url = 'mongodb:\/\/localhost:270217\/tmp-test'/]
       ]);
 
       done();
