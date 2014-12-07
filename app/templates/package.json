@@ -17,7 +17,9 @@
     "gulp-watch": "^3.0.0",
     "gulp-nodemon": "^1.0.4",
     "gulp-plumber": "^0.6.6",
-    "gulp-load-plugins": "^0.7.1"
+    "gulp-load-plugins": "^0.7.1",
+    "browserify": "^6.3.3",
+    "vinyl-transform": "^1.0.0"
   }
 }
 
