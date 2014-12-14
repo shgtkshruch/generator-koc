@@ -36,7 +36,7 @@ describe('generator koc', function () {
         ['README.md', /# tmp-test/],
         ['package.json', /"name": "tmp-test"/],
         ['views/index.jade', /title tmp-test/],
-        ['model/model.js', /var url = 'mongodb:\/\/localhost:270217\/tmp-test'/]
+        ['model/model.js', /var db = monk\('localhost\/tmp-test'\)/]
       ]);
 
       done();

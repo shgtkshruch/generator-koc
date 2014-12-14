@@ -1,19 +1,12 @@
-var thunkify = require('thunkify');
-var MongoClient = require('mongodb').MongoClient;
-var url = 'mongodb://localhost:270217/<%= _.slugify(appname) %>';
+var monk = require('monk');
+var wrap = require('co-monk');
+var db = monk('localhost/<%= _.slugify(appname) %>');
 
-var connect = thunkify(function (cb) {
-  MongoClient.connect(url, function (err, db) { 
-    cb(err, db);
-  });
-});
+// create users collection
+// var users = wrap(db.get('users'));
 
 module.exports = {
   example: function *() {
-    var db = yield connect();
-
-    // do something.
-
-    db.close();
+    yield users.insert({name: 'test'});
   }
 };
