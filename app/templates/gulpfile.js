@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var browserify = require('browserify');
-var transform = require('vinyl-transform');
+var source = require('vinyl-source-stream');
 
 gulp.task('style', function () {
   gulp.src('src/style/main.scss')
@@ -11,14 +11,11 @@ gulp.task('style', function () {
 });
 
 gulp.task('script', function () {
-  var browserified = transform(function (filename) {
-    var b = browserify(filename);
-    return b.bundle();
-  });
 
-  gulp.src('./src/script/index.js')
+  browserify('./src/index.js')
+    .bundle()
     .pipe($.plumber())
-    .pipe(browserified)
+    .pipe(source('main.js'))
     .pipe(gulp.dest('public/script'));
 });
 
